@@ -1,0 +1,11 @@
+version: "3"
+services:
+  bot:
+    build: .
+    image: 192.168.1.13:5000/bot
+    environment:
+      - TOKEN=${TOKEN}
+      - INSTANCE_ID=${INSTANCE_ID}
+      - REGION=${REGION}
+      - ACCESS_KEY=${ACCESS_KEY}
+      - SECRET_KEY=${SECRET_KEY}
