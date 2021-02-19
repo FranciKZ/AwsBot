@@ -55,8 +55,8 @@ export class AwsService {
 
     async checkStatusCommand(msg: Message) {
         try {
-            const response = await this.instanceController.describeInstanceStatus(params).promise();
-            const state = response.InstanceStatuses[0].InstanceState.Name;
+            const response = await this.instanceController.describeInstances(params).promise();
+            const state = response.Reservations[0].Instances[0].State.Name;
 
             switch (state) {
                 case 'running':
@@ -82,8 +82,8 @@ export class AwsService {
 
     private async checkState(states: string[]): Promise<boolean> {
         try {
-            const response = await this.instanceController.describeInstanceStatus(params).promise();
-            const state = response.InstanceStatuses[0].InstanceState.Name;
+            const response = await this.instanceController.describeInstances(params).promise();
+            const state = response.Reservations[0].Instances[0].State.Name;
             console.log(state);
             return states.indexOf(state) === -1;
         } catch (error) {
