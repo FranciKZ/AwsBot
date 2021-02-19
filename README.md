@@ -4,7 +4,7 @@ Discord bot to manage an AWS EC2 instance.
 
 ## Commands
 
-All commands are be prepended with `!val`
+All commands are should be prepended with `!val`
 
 - start
   -  Will check if the instance is stopped and if it is will start the instance
