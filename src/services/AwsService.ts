@@ -66,9 +66,11 @@ export class AwsService {
                     msg.reply('Instance is starting up');
                     break;
                 case 'stopped':
+                    msg.reply('Instance is stopped.')
+                    break;
                 case 'shutting-down':
                 case 'stopping':
-                    msg.reply('Instance is stopping and/or stopped.')
+                    msg.reply('Instance is stopping.')
                     break;
                 default: 
                     msg.reply('Unknown instance state');

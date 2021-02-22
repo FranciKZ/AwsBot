@@ -9,3 +9,5 @@ services:
       - REGION=${REGION}
       - ACCESS_KEY=${ACCESS_KEY}
       - SECRET_KEY=${SECRET_KEY}
+      - SERVER_IP=${SERVER_IP}
+      - SERVER_PASSWORD=${SERVER_PASSWORD}

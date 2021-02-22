@@ -14,14 +14,29 @@ export class BotService {
 
         this.client.on('message', (msg: Message) => {
             if(msg.content.startsWith('!val')) {
-                const command = msg.content.split(' ')[1].trim();
+                const command = msg.content.split(' ')[1].trim().toLowerCase();
                 
-                if (command === 'start') {
-                    awsService.startInstanceCommand(msg);
-                } else if (command === 'stop') {
-                    awsService.stopInstanceCommand(msg);
-                } else if (command === 'status') {
-                    awsService.checkStatusCommand(msg);
+                switch (command) {
+                    case 'start':
+                        awsService.startInstanceCommand(msg);
+                        break;
+                    case 'stop':
+                        awsService.stopInstanceCommand(msg);
+                        break;
+                    case 'status':
+                        awsService.checkStatusCommand(msg);
+                        break;
+                    case 'help':
+                        msg.reply('You can do `!val start`, `!val stop`, `!val status`, `!val ip` \:evilpatrick:');
+                        break;
+                    case 'ip':
+                        msg.reply(`The IP of the server is ${process.env.SERVER_IP}`);
+                        break;
+                    case 'password':
+                        msg.reply(`The password is ${process.env.SERVER_PASSWORD}`);
+                        break;
+                    default:
+                        msg.reply('No command found. Try again later maybe. \:FeelsTriedMan:')
                 }
             }
         });
