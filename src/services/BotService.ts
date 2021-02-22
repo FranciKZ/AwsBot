@@ -27,7 +27,7 @@ export class BotService {
                         awsService.checkStatusCommand(msg);
                         break;
                     case 'help':
-                        msg.reply('You can do `!val start`, `!val stop`, `!val status`, `!val ip` \:evilpatrick:');
+                        msg.reply('You can do `!val start`, `!val stop`, `!val status`, `!val ip`, `!val password`');
                         break;
                     case 'ip':
                         msg.reply(`The IP of the server is ${process.env.SERVER_IP}`);
@@ -36,7 +36,7 @@ export class BotService {
                         msg.reply(`The password is ${process.env.SERVER_PASSWORD}`);
                         break;
                     default:
-                        msg.reply('No command found. Try again later maybe. \:FeelsTriedMan:')
+                        msg.reply('No command found. Try again later maybe.')
                 }
             }
         });
