@@ -14,6 +14,12 @@ All commands are should be prepended with `!val`
 
 - status
   - Will return the current status of the instance. Stopped/Stopping are combined into once response. 
+- help
+  - Will return a list of commands
+- ip
+  - Will return the IP of the aws instance
+- password
+  - Will return the server password
 
 ## Setup
 
